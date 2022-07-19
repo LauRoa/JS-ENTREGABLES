@@ -2,8 +2,14 @@
 
 const conjuntos = window.productos;
 
-let productosCarrito = [];
-let continuar = true;
+let productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function totalDeCompra(){
+  const totalDeCompra = document.getElementById("totalCarrito");
+  totalDeCompra.innerHTML = productosCarrito.reduce(function (acc, current) { return acc + current.precio; }, 0);
+}
+
+totalDeCompra();
 
 const container = document.getElementById("container");
 
@@ -25,10 +31,15 @@ function imprimirConjuntos(conjuntosFiltrados) {
         container.appendChild(item);
         const botonCarrito = document.getElementById(`btnCarrito-${producto.id}`);
         botonCarrito.addEventListener(evento, () => {
-            alert(`Se agregaron al carrito ${productosCarrito.push(p)} productos`);
-
-            const totalDeCompra = document.getElementById("totalCarrito");
-            totalDeCompra.innerHTML = productosCarrito.reduce(function (acc, current) { return acc + current.precio; }, 0);
+           Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `Tu producto fue añadido al carrito. Total de productos: ${productosCarrito.push(p)}`,
+            showConfirmButton: false,
+            timer: 1500
+          });
+            localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+            totalDeCompra();
         });
     }
 }
@@ -49,3 +60,43 @@ botonVerProductos.addEventListener(evento, () => {
     alert(`Los productos agregados son: \n${productosSeleccionados.join("\n")}`);
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+btn.addEventListener("click", () => {
+    Swal.fire({
+      title: "Está seguro de agregar al carrito?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, seguro",
+      cancelButtonText: "No, no quiero",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // let carrito = JSON.parse(localStorage.getItem("carrito"))
+        // carrito.push(producto);
+        // localStorage.setItem("carrito", JSON.stringify(carrito));
+  
+        Swal.fire({
+          title: "Guardado!",
+          icon: "success",
+          text: "El producto se guardo",
+        });
+      }
+    });
+  });
+  
