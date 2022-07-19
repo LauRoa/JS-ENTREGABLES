@@ -60,6 +60,8 @@ botonVerProductos.addEventListener(evento, () => {
     alert(`Los productos agregados son: \n${productosSeleccionados.join("\n")}`);
 });
 
+const nombreUsuario = document.getElementById("nombreUsuario");
+nombreUsuario.innerHTML = sessionStorage.getItem("usuario") ? ', ' + sessionStorage.getItem("usuario") : '';
 
 
 
