@@ -6,7 +6,10 @@ let productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function totalDeCompra(){
   const totalDeCompra = document.getElementById("totalCarrito");
-  totalDeCompra.innerHTML = productosCarrito.reduce(function (acc, current) { return acc + current.precio; }, 0);
+  totalDeCompra.innerHTML = productosCarrito.reduce((acc, current) => { 
+    const {precio} = current;
+    return acc + precio; 
+  }, 0);
 }
 
 totalDeCompra();
@@ -46,7 +49,7 @@ function imprimirConjuntos(conjuntosFiltrados) {
 
 function construirFiltro(tipo) {
     return () => {
-        const conjuntosFiltrados = conjuntos.filter(elemento => elemento.conjunto === tipo);
+        const conjuntosFiltrados = conjuntos.filter(({conjunto}) => conjunto === tipo);
         imprimirConjuntos(conjuntosFiltrados);
     }
 }
@@ -56,7 +59,7 @@ botonFiltroArmado.addEventListener(evento, construirFiltro("armado"));
 botonFiltroSinArmar.addEventListener(evento, construirFiltro("sin armar"));
 
 botonVerProductos.addEventListener(evento, () => {
-    let productosSeleccionados = productosCarrito.map((elemento, i) => `${i + 1}. ${elemento.nombre} (Talle: ${elemento.talle})`);
+    let productosSeleccionados = productosCarrito.map(({nombre, talle}, i) => `${i + 1}. ${nombre} (Talle: ${talle})`);
     alert(`Los productos agregados son: \n${productosSeleccionados.join("\n")}`);
 });
 
