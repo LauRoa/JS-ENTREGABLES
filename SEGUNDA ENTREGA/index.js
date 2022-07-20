@@ -82,26 +82,3 @@ nombreUsuario.innerHTML = sessionStorage.getItem("usuario") ? ', ' + sessionStor
 
 
 
-
-btn.addEventListener("click", () => {
-    Swal.fire({
-      title: "Está seguro de agregar al carrito?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Sí, seguro",
-      cancelButtonText: "No, no quiero",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // let carrito = JSON.parse(localStorage.getItem("carrito"))
-        // carrito.push(producto);
-        // localStorage.setItem("carrito", JSON.stringify(carrito));
-  
-        Swal.fire({
-          title: "Guardado!",
-          icon: "success",
-          text: "El producto se guardo",
-        });
-      }
-    });
-  });
-  

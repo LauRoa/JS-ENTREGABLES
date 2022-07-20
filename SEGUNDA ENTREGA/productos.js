@@ -128,6 +128,6 @@ const sinArmar = [
         "precio": 1350,
         "talle": 100
     }
-];
+].map(productoActual => ({...productoActual, conjunto: 'sin armar'}));
 
-window.conjuntos = [...armados, ...sinArmar].map((producto, id) => ({id, ...producto}))
+window.productos = [...armados, ...sinArmar].map((producto, id) => ({id, ...producto}))
