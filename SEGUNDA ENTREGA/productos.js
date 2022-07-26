@@ -89,7 +89,7 @@ const sinArmar = [
         "talle": 95
     },
     {
-        "nombre": "Luna",
+        "nombre": "Lua",
         "precio": 1200,
         "talle": 85
     },
@@ -130,4 +130,4 @@ const sinArmar = [
     }
 ].map(productoActual => ({...productoActual, conjunto: 'sin armar'}));
 
-window.productos = [...armados, ...sinArmar].map((producto, id) => ({id, ...producto}))
+window.productos = [...armados, ...sinArmar].map((producto, id) => ({id,imagen:producto.nombre.toLowerCase(),...producto}))

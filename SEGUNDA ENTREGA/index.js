@@ -26,11 +26,11 @@ function imprimirConjuntos(conjuntosFiltrados) {
     for (producto of conjuntosFiltrados) {
         const p = producto;
         let item = document.createElement("div");
-        item.innerHTML = `<p>Id: ${producto.id}</p>
-                          <h3> Modelo: ${producto.nombre}</h3>
+        item.innerHTML = `<h3> Modelo: ${producto.nombre}</h3>
                           <p> Talle: ${producto.talle}</p>
                           <b> Precio: ${producto.precio}</b><br>
-                          <button id="btnCarrito-${producto.id}"> Agregar al carrito </button>`
+                          <img class="imagenProductos" src="../img/${producto.imagen}.jpg">
+                          <button class="botones" id="btnCarrito-${producto.id}"> Agregar al carrito </button>`
         container.appendChild(item);
         const botonCarrito = document.getElementById(`btnCarrito-${producto.id}`);
         botonCarrito.addEventListener(evento, () => {

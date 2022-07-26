@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Acerca de nosotros">
-    <meta name="keywords" content="Vesta Lenceria, lenceria, conjuntos, corpiño, colales, tanga">
-    <link rel="shortcut icon" href="./img/logo.jpg" alt = "logo Vesta LP">
-    <link rel="stylesheet" href="./estilos.css">
+    <meta name="description" content="Carrito de compras">
+    <meta name="keywords" content="Vesta Lenceria, lenceria, conjuntos,carrito">
+    <link rel="shortcut icon" href="../img/logo.jpg" alt = "logo Vesta LP">
+    <link rel="stylesheet" href="../estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Home</title>
+    <title>Carrito</title>
 </head>
 <body>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <nav class="header__navbar navbar navbar-expand-lg navbar-light bg-light" style="background-image:url(./icon/encabezado.jpg)">
+    <nav class="header__navbar navbar navbar-expand-lg navbar-light bg-light" style="background-image:url(../icon/encabezado.jpg)">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarNav" style="justify-content:flex-end">
             <ul class="navbar-nav">
@@ -21,7 +21,7 @@
                     <a class="nav-link__modificado" href="../">Home</a>
                   </li>
               <li class="nav-item">
-                <a class="nav-link__modificado" href="../carrito">Carrito</a>
+                <a class="nav-link__modificado" href="index.html">Carrito</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link__modificado" href="../registro">Inicio de sesión</a>
@@ -31,31 +31,26 @@
         </div>
     </nav>
 
-    <h2> Gracias por visitar nuestro e-commerce<span id="nombreUsuario"></span></div>
-    </h2>
-    
-    <p>Seleccione el tipo de conjuntos que desea visualizar</p>
+    <h1> Productos agregados</h1>
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <div  >
-            <button class="botones" id="btnArmado">
-                CONJUNTO ARMADO
-            </button>
-            <button class="botones" id="btnSinArmar">
-                CONJUNTO SIN ARMAR
-            </button>
-        </div>
-        <div>
+        <div class="col-sm-12 col-md-9">
+          <div>
             <div>TOTAL DE COMPRA $: <span id="totalCarrito"></span></div>
-            <div> <button class="botones" id="btnVerProductos"> VER PRODUCTOS AGREGADOS</button></div>
         </div>
         <div id="container"></div>
+        <div>
+            <button class="botones" id="btnVaciarCarrito">
+                VACIAR CARRITO
+            </button>
+            <button  class="botones" id="btnComprar">
+                FINALIZAR COMPRA
+            </button>
+        </div>
         </div>
       </div>
-    </div>
-
+    </div>  
 
     <footer class = "footer">
       <ul class="footer__menu" id="ul__footer">
@@ -72,10 +67,10 @@
       </div>
     </footer>
 
-    <script src="./productos.js"></script>
-    <script src="./index.js"></script>
+    <script src="./carrito.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="js-bst/bootstrap.min.js"></script>
+    
 </body>
 </html>

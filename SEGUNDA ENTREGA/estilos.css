@@ -1,0 +1,138 @@
+/*-------------HEADER------------*/
+
+.header__navbar{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-content: space-between;
+    justify-content: space-between;
+    padding: 4rem;
+}
+
+.navbar-brand__modificado{
+    color: aliceblue;
+}
+.nav-link__modificado{
+    display: block;
+    text-transform: uppercase;
+    color: aliceblue;
+    font-size: 2rem;
+    background-color: #e6047cc0;
+    padding: 1rem;
+    margin: 5px;
+    border: solid;
+    border-color: gray;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+}
+.nav-link__modificado :hover{
+    background-color: aliceblue;
+}
+.navbar-nav{
+    list-style: none;
+}
+.container-fluid{
+    margin: 1rem;
+}
+
+/*-------------INDEX--------------*/
+.botones{
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;	
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #e6047cc0;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin:1rem;
+}
+
+.botones:hover{
+    background-color: #cf428d5e;
+}
+
+.botones:active{
+        background-color: #e6047cc0;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        text-align: center;
+}
+
+.imagenProductos{
+    max-width: 100%;
+    height: 10rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*----------FOOTER----------*/
+footer{
+    display: flex;
+    background: linear-gradient(90deg, rgba(69, 96, 79, 0.516311) 15%, rgba(42, 45, 42, 0.922473) 52%);
+    color: #e6047cc0;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 10px;
+}
+
+.footer__flex{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footer__menu{
+    list-style-type:none;
+    text-align: center;
+}
+.footer__menu a{
+    text-decoration: none ;
+}
+.footer__menu img{
+    width: 15%;
+    height: auto;
+}
+
+.footer__credito{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.direccion{
+    text-align: center;
+    font-size: 1rem;
+}
+/*------ CAMBIA TAMAÑO ELEMENTOS FOOTER SEGUN LA RESOLUCIÓN-----*/
+@media (min-width:720px){
+    footer .footer__menu img{
+        width: 7%;
+     }
+    .direccion{
+        font-size:0.8rem;
+    }
+    .footer__credito{
+        font-size: 0.8rem;
+    }
+}
+@media (min-width:1200px){
+    footer .footer__menu img{
+        width: 4%;
+    }
+}
