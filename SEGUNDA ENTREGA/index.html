@@ -8,6 +8,7 @@
     <meta name="keywords" content="Vesta Lenceria, lenceria, conjuntos, corpiño, colales, tanga">
     <link rel="shortcut icon" href="./img/logo.jpg" alt = "logo Vesta LP">
     <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="./spinner.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
@@ -31,31 +32,12 @@
         </div>
     </nav>
 
-    <h2> Gracias por visitar nuestro e-commerce<span id="nombreUsuario"></span></div>
-    </h2>
-    
-    <p>Seleccione el tipo de conjuntos que desea visualizar</p>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-4 col-md-4">
-          <div  >
-            <button class="botones" id="btnArmado">
-                CONJUNTO ARMADO
-            </button>
-            <button class="botones" id="btnSinArmar">
-                CONJUNTO SIN ARMAR
-            </button>
-        </div>
-        <div>
-            <div>TOTAL DE COMPRA $: <span id="totalCarrito"></span></div>
-            <div> <button class="botones" id="btnVerProductos"> VER PRODUCTOS AGREGADOS</button></div>
-        </div>
-        <div id="container"></div>
-        </div>
-      </div>
+    <div id="contentApp">
+      <p>Cargando...</p>
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
 
+    
 
     <footer class = "footer">
       <ul class="footer__menu" id="ul__footer">
@@ -72,7 +54,6 @@
       </div>
     </footer>
 
-    <script src="./productos.js"></script>
     <script src="./index.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
