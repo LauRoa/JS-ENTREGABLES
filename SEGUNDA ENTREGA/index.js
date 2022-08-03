@@ -1,31 +1,6 @@
 //SIMULAMOS UN CARRITO DE COMPRAS DE UN SITIO WEB DE LENCERIA
 async function app() {
   const conjuntos = await fetch('./productos.json').then(res => res.json());
-  document.getElementById('contentApp').innerHTML = `<h2> Gracias por visitar nuestro e-commerce<span id="nombreUsuario"></span></div>
-  </h2>
-  
-  <p>Seleccione el tipo de conjuntos que desea visualizar</p>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-4 col-md-4">
-        <div  >
-          <button class="botones" id="btnArmado">
-              CONJUNTO ARMADO
-          </button>
-          <button class="botones" id="btnSinArmar">
-              CONJUNTO SIN ARMAR
-          </button>
-      </div>
-      <div>
-          <div>TOTAL DE COMPRA $: <span id="totalCarrito"></span></div>
-          <div> <button class="botones" id="btnVerProductos"> VER PRODUCTOS AGREGADOS</button></div>
-      </div>
-      <div id="container"></div>
-      </div>
-    </div>
-  </div>
-`
 
   let productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -40,7 +15,8 @@ async function app() {
   totalDeCompra();
 
   const container = document.getElementById("container");
-
+  container.removeChild(container.firstElementChild);
+  
   const botonFiltroArmado = document.getElementById("btnArmado");
   const botonFiltroSinArmar = document.getElementById("btnSinArmar");
   const evento = "click";
