@@ -1,0 +1,56 @@
+/*----------FOOTER----------*/
+footer{
+    display: flex;
+    background: rgb(69,96,79);
+    background: linear-gradient(90deg, rgba(69, 96, 79, 0.516311) 15%, rgba(42, 45, 42, 0.922473) 52%);
+    color: blueviolet;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    top: -1px;
+    .footer__flex{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .footer__menu{
+        list-style-type:none;
+        text-align: center;
+        a{
+            text-decoration: none ;
+        }
+        img{
+            width: 15%;
+            height: auto;
+        }
+    }
+}
+.footer__credito{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+.direccion{
+    text-align: center;
+    font-size: 2rem;
+}
+/*------ CAMBIA TAMAÑO ELEMENTOS FOOTER SEGUN LA RESOLUCIÓN-----*/
+@media (min-width:720px){
+    footer .footer__menu img{
+        width: 7%;
+     }
+    .direccion{
+        font-size:0.8rem;
+    }
+    .footer__credito{
+        font-size: 0.8rem;
+    }
+}
+@media (min-width:1200px){
+    footer .footer__menu img{
+        width: 4%;
+    }
+}
