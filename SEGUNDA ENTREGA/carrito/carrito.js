@@ -20,11 +20,16 @@ function imprimirCarrito() {
     for (producto of productosCarrito) {
         const p = producto;
         let item = document.createElement("div");
-        item.innerHTML = `<h3> Modelo: ${producto.nombre}</h3>
-                          <p> Talle: ${producto.talle}</p>
-                          <b> Precio: ${producto.precio}</b><br>
-                          <img class="imagenProductos" src="../img/${producto.imagen}.jpg">
-                          <button class="botones" id="btnCarrito-${producto.id}"> Quitar producto </button>`
+        item.classList.add('col-sm-12','col-md-6');
+        item.innerHTML = `<div class="card mt-2">
+        <img class="card-img-top" src="../img/${producto.imagen}.jpg" alt="Imagen conjunto">
+        <div class="card-body">
+          <h5 class="card-title">Modelo: ${producto.nombre}</h5>
+          <p> Talle: ${producto.talle}</p>
+          <b> Precio: $${producto.precio}</b>
+          <button class="botones" id="btnCarrito-${producto.id}"> Quitar producto </button>
+        </div>
+      </div>`
         container.appendChild(item);
         const botonCarrito = document.getElementById(`btnCarrito-${producto.id}`);
         botonCarrito.addEventListener(evento, () => {
